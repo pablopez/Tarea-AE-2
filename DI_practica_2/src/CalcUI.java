@@ -221,12 +221,14 @@ public class CalcUI extends JFrame {
 	
 	private void cbrt() {
 		String password = JOptionPane.showInputDialog(null,"password");
-		if(password.equals("0000")) {
-			Object num_a = getNumeroUno();
-			Object num_b = getNumeroDos();
-			final_result.setText( Math.cbrt((double)num_a) +" | "+  Math.cbrt((double)num_b));
-		}else {
-			showWarnMessage("Contrasena incorrecta. No tienes acceso a la operacion");
+		if (password!=null) {
+			if(password.equals("0000")) {
+				Object num_a = getNumeroUno();
+				Object num_b = getNumeroDos();
+				final_result.setText( Math.cbrt((double)num_a) +" | "+  Math.cbrt((double)num_b));
+			}else {
+				showWarnMessage("Contrasena incorrecta. No tienes acceso a la operacion");
+			}
 		}
 	}
 }
